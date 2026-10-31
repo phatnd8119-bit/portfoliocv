@@ -1,0 +1,591 @@
+
+:root {
+    --primary-color: #9354ff;
+    --primary-hover: #6d28d9;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #2c3e50;
+    --text-muted: #6c757d;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+    --header-bg: #ffffff;         /* Nền trắng */
+    --header-text: #2c3e50;
+}
+
+/* DARK MODE */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+    color: var(--text-color);
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 8px 0 0 0;
+    border-radius: 2px;
+}
+
+/*  HEADER & NAVBAR */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #c6f3fb;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.header .logo, 
+.header .nav-link, 
+.header .theme-btn {
+    color: #0f172a !important; /* Màu đen/xanh đậm giúp chữ cực kỳ rõ nét */
+    font-weight: 600;           /* Tăng độ đậm của chữ */
+}
+
+/* Đổi màu tím nổi bật khi rê chuột vào chữ */
+.header .nav-link:hover {
+    color: #7c3aed !important; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.btn-group-link {
+    background-color: #e74c3c;
+    color: #fff !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-group-link:hover {
+    background-color: #c0392b;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 130px 20px 60px;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.hero-text h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin: 5px 0;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.description {
+    margin: 15px 0 25px;
+    max-width: 600px;
+    color: var(--text-muted);
+}
+
+/* BUTTONS & CARDS */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px); /* CSS Transform (II.12) */
+}
+
+/* Objectives & Timeline */
+.objective-card, .info-box {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
+    box-shadow: var(--shadow);
+}
+
+.timeline-item .date {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* CSS Hover Effect (II.12) */
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Projects Grid */
+/* ==================== THANH TIẾN ĐỘ KỸ NĂNG ==================== */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.skill-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.skill-name i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.skill-percentage {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Khung viền chứa thanh tiến độ */
+.progress-line {
+    height: 10px;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* Thanh màu tím gradient chạy tiến độ */
+.progress-line span {
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary-color), #a855f7);
+    animation: animateProgress 1.5s ease-in-out forwards;
+}
+
+/* Cấu hình phần trăm từng kỹ năng */
+.progress-line.html-css span { width: 70%; background: linear-gradient(90deg, #ff5722, #ff9800) }
+.progress-line.js span       { width: 50%; background: linear-gradient(90deg, #f7df1e, #ff9800)}
+.progress-line.python span   { width: 75%; background: linear-gradient(90deg, #2196f3, #00bcd4)}
+.progress-line.git span      { width: 85%; background: linear-gradient(90deg, #f05032, #e91e63)}
+
+@keyframes animateProgress {
+    from {
+        width: 0%;
+    }
+}
+
+/* ==================== PROJECTS GRID ==================== */
+.project-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 10px 0;
+}
+
+.tech-stack {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-sm.outline {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.extra-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 65px;
+        flex-direction: column;
+        background-color: var(--card-bg);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .extra-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== FORM LIÊN HỆ HIỆN ĐẠI ==================== */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-form {
+    background-color: var(--card-bg);
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 580px;
+    transition: var(--transition);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Đưa tiêu đề nhãn lên trên, ô nhập xuống dưới */
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    outline: none;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+/* Hiệu ứng viền tím + bóng mờ phát sáng khi click vào ô nhập */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Nút bấm gửi form tràn ngang đẹp mắt */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+}
+
+/* Thông báo lỗi & thành công */
+.error-msg {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.success-msg {
+    color: #10b981;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
