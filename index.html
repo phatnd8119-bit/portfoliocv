@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Cá Nhân | Nguyễn Đức Phát</title>
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,14 +15,14 @@
             <a href="#" class="logo">PND <span>CV</span></a>
             
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                <li><a href="#hero" class="nav-link">Giới thiệu</a></li>
                 <li><a href="#experience" class="nav-link">Học vấn</a></li>
                 <li><a href="#objective" class="nav-link">Mục tiêu</a></li>
                 <li><a href="#certificates" class="nav-link">Chứng chỉ</a></li>
                 <li><a href="#skills" class="nav-link">Kỹ năng</a></li>
                 <li><a href="#projects" class="nav-link">Dự án</a></li>
                 <li><a href="#contact" class="nav-link">Liên hệ</a></li>
-                <li><a href="https://link-web-nhom-cua-ban.com" target="_blank" class="btn-group-link">Web Nhóm</a></li>
+                <li><a href="https://manhcuong150206.github.io/Group10/" target="_blank" class="btn-group-link">Web Nhóm</a></li>
             </ul>
 
             <div class="nav-controls">
@@ -49,25 +48,25 @@
                     <img src="image/avt.jpg" alt="Ảnh đại diện Nguyễn Văn A" onerror="this.src='https://via.placeholder.com/180'">
                 </div>
                 <div class="hero-text">
-                    <h3>Xin chào, tôi là</h3>
-                    <h1>Nguyễn Đức Phát</h1>
+                    <h3 class="gradient-text">Xin chào, tôi là</h3>
+                    <h1 class="gradient-text">Nguyễn Đức Phát</h1>
                     <p class="subtitle">Lập trình viên / Sinh viên CNTT</p>
-                    <p class="description">
-                        Thích xây dựng các sản phẩm web và khả năng chủ động học hỏi công nghệ mới.
+                    <p class="description"> Thích xây dựng các sản phẩm web và khả năng chủ động học hỏi công nghệ mới.
                     </p>
-                    
+    
+                    <div class="hero-action">
                         <a href="#contact" class="btn">Liên hệ tôi</a>
-                    <div class="hero-buttons"></div>
+        
                         <div class="social-links">
-                             <!-- Facebook -->
-                            <a href="https://www.facebook.com/share/1J41KkFST7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
+                            <!-- Facebook -->
+                                <a href="https://www.facebook.com/share/1J41KkFST7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
 
                             <!-- Instagram -->
-                             <a href="https://www.instagram.com/nngdphat?dlrf=MWZpa2VlOTY1ZXl0eg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon instagram">
-                                 <i class="fa-brands fa-instagram"></i>
-                            </a>
+                                <a href="https://www.instagram.com/nngdphat?dlrf=MWZpa2VlOTY1ZXl0eg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                 </a>
                         </div>
                     </div>
                 </div>
@@ -131,7 +130,7 @@
             <!-- Kỹ năng 1 -->
                 <div class="skill-item">
                     <div class="skill-info">
-                    <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</span>
+                    <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML & CSS</span>
                     <span class="skill-percentage">70%</span>
                 </div>
                 <div class="progress-line html-css">
@@ -142,7 +141,7 @@
             <!-- Kỹ năng 2 -->
              <div class="skill-item">
                 <div class="skill-info">
-                    <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+                    <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript</span>
                     <span class="skill-percentage">50%</span>
                 </div>
                 <div class="progress-line js">
@@ -207,7 +206,7 @@
                         <p class="project-desc">Dự án lớn phối hợp cùng nhóm, tích hợp thông tin cá nhân của các thành viên.</p>
                         <p class="tech-stack"><strong>Công nghệ:</strong> HTML, CSS, JavaScript, Git</p>
                         <div class="project-links">
-                            <a href="https://link-web-nhom-cua-ban.com" target="_blank" class="btn-sm btn-group">Xem Web Nhóm →</a>
+                            <a href="https://manhcuong150206.github.io/Group10/" target="_blank" class="btn-sm btn-group">Xem Web Nhóm →</a>
                         </div>
                     </div>
                 </div>
@@ -220,33 +219,60 @@
         <section class="section container" id="contact">
             <h2 class="section-title">Liên Hệ Với Tôi</h2>
     
-            <div class="contact-wrapper">
-                <form id="contact-form" class="contact-form" novalidate>
-                    <div class="form-group">
-                        <label for="fullname">Họ và Tên (*)</label>
-                        <input type="text" id="fullname" placeholder="Nhập họ tên của bạn">
-                        <small class="error-msg" id="name-error"></small>
+            <div class="contact-container">
+                <!-- Cột trái: Khối thông tin liên hệ -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span class="label">Email</span>
+                            <a href="mailto:phatnguyen221206@gmail.com">phatnguyen221206@gmail.com</a>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email (*)</label>
-                        <input type="email" id="email" placeholder="example@gmail.com">
-                        <small class="error-msg" id="email-error"></small>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                             <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span class="label">Điện thoại</span>
+                            <a href="tel:0899559160">0899 559 160</a>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Lời nhắn (*)</label>
-                        <textarea id="message" rows="5" placeholder="Nhập nội dung lời nhắn..."></textarea>
-                        <small class="error-msg" id="message-error"></small>
-                     </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span class="label">Địa chỉ</span>
+                            <p>TP. Hồ Chí Minh, Việt Nam</p>
+                        </div>
+                    </div>
+                </div>
 
-                     <button type="submit" class="btn btn-submit">Gửi Đăng Ký / Liên Hệ</button>
-                     <div id="form-success" class="success-msg"></div>
-                </form>
+        <!-- Cột phải: Form nhập thông tin -->
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label>Họ và Tên (*)</label>
+                <input type="text" placeholder="Nhập họ tên của bạn" required>
             </div>
-        </section>
+            <div class="form-group">
+                <label>Email (*)</label>
+                <input type="email" placeholder="example@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label>Lời nhắn (*)</label>
+                <textarea rows="4" placeholder="Nhập nội dung lời nhắn..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit">Gửi Đăng Ký / Liên Hệ</button>
+        </form>
+    </div>
+</section>
     </main>
-
+</section>
     <footer>
         <p>&copy; 2026 Nguyễn Đức Phát. All Rights Reserved.</p>
     </footer>

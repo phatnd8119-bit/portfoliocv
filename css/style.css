@@ -1,7 +1,7 @@
 
 :root {
-    --primary-color: #9354ff;
-    --primary-hover: #6d28d9;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
     --bg-color: #f8f9fa;
     --card-bg: #ffffff;
     --text-color: #2c3e50;
@@ -77,7 +77,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #c6f3fb;
+    background-color: #9eedf7;
     box-shadow: var(--shadow);
     z-index: 1000;
     transition: var(--transition);
@@ -86,15 +86,31 @@ body {
 .header .logo, 
 .header .nav-link, 
 .header .theme-btn {
-    color: #0f172a !important; /* Màu đen/xanh đậm giúp chữ cực kỳ rõ nét */
-    font-weight: 600;           /* Tăng độ đậm của chữ */
+    color: #080c16 !important; 
+    font-weight: 600;          
 }
 
-/* Đổi màu tím nổi bật khi rê chuột vào chữ */
+/* Đổi màu tím khi rê chuột vào chữ */
 .header .nav-link:hover {
     color: #7c3aed !important; 
 }
 
+.nav-list a,
+.nav-menu a,
+header nav a,
+header ul li a {
+    display: inline-block;               
+    transition: transform 0.25s ease, color 0.25s ease; 
+}
+
+/* 2. Hiệu ứng khi rê chuột vào  */
+.nav-list a:hover,
+.nav-menu a:hover,
+header nav a:hover,
+header ul li a:hover {
+    transform: translateY(-4px);         
+    color: var(--primary-color, #2563eb); 
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -238,7 +254,44 @@ body {
 
 .btn:hover {
     background-color: var(--primary-hover);
-    transform: translateY(-2px); /* CSS Transform (II.12) */
+    transform: translateY(-2px); 
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgba(37, 99, 235, 0.12); 
+    color: #2563eb;                            
+    border: 1.5px solid rgba(37, 99, 235, 0.4); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #2563eb;                 
+    color: #ffffff;                            
+    border-color: #2563eb;
+    transform: translateY(-3px);               
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45); 
 }
 
 /* Objectives & Timeline */
@@ -288,7 +341,7 @@ body {
 }
 
 .skill-card:hover {
-    transform: translateY(-5px); /* CSS Hover Effect (II.12) */
+    transform: translateY(-5px); 
 }
 
 .skill-icon {
@@ -298,7 +351,7 @@ body {
 }
 
 /* Projects Grid */
-/* ==================== THANH TIẾN ĐỘ KỸ NĂNG ==================== */
+/* THANH TIẾN ĐỘ KỸ NĂNG */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -361,6 +414,17 @@ body {
     animation: animateProgress 1.5s ease-in-out forwards;
 }
 
+/* CHỈ ĐỔI MÀU GRADIENT CHO CHỮ CÓ CLASS GRADIENT-TEXT */
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: block;
+    font-weight: 700;
+}
+
 /* Cấu hình phần trăm từng kỹ năng */
 .progress-line.html-css span { width: 70%; background: linear-gradient(90deg, #ff5722, #ff9800) }
 .progress-line.js span       { width: 50%; background: linear-gradient(90deg, #f7df1e, #ff9800)}
@@ -373,7 +437,7 @@ body {
     }
 }
 
-/* ==================== PROJECTS GRID ==================== */
+/* PROJECTS GRID  */
 .project-filter {
     display: flex;
     justify-content: center;
@@ -496,85 +560,146 @@ body {
     }
 }
 
-/* ==================== FORM LIÊN HỆ HIỆN ĐẠI ==================== */
-.contact-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+/* FORM LIÊN HỆ HIỆN ĐẠI */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr; 
+    gap: 25px;
+    align-items: start;
+    margin-top: 25px;
 }
 
-.contact-form {
-    background-color: var(--card-bg);
-    padding: 35px 40px;
+/* CỘT TRÁI - THẺ THÔNG TIN */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-card {
+    background-color: var(--card-bg, #1e1e2e);
+    border: 1px solid var(--border-color, #333);
     border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
     box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
-    width: 100%;
-    max-width: 580px;
-    transition: var(--transition);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color, #7c3aed);
+}
+
+.contact-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--primary-color, #7c3aed);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-details .label {
+    font-size: 0.8rem;
+    color: var(--text-muted, #a1a1aa);
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.contact-details a,
+.contact-details p {
+    color: var(--text-color, #ffffff);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contact-details a:hover {
+    color: var(--primary-color, #7c3aed);
+}
+
+/* CỘT PHẢI - FORM LIÊN HỆ */
+.contact-form {
+    background-color: var(--card-bg, #1e1e2e);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow);
 }
 
 .form-group {
     display: flex;
-    flex-direction: column; /* Đưa tiêu đề nhãn lên trên, ô nhập xuống dưới */
-    margin-bottom: 18px;
+    flex-direction: column;
+    gap: 6px;
     text-align: left;
 }
 
 .form-group label {
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-color);
-    font-size: 0.95rem;
+    color: var(--text-color, #ffffff);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 16px;
-    font-size: 0.95rem;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color, #444);
     border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-color, #ffffff);
+    font-size: 0.9rem;
     outline: none;
-    transition: var(--transition);
-    font-family: inherit;
+    transition: border-color 0.2s ease;
 }
 
-/* Hiệu ứng viền tím + bóng mờ phát sáng khi click vào ô nhập */
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+    border-color: var(--primary-color, #7c3aed);
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 110px;
-}
-
-/* Nút bấm gửi form tràn ngang đẹp mắt */
 .btn-submit {
     width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    background-color: var(--primary-color);
+    padding: 14px;
+    background-color: var(--primary-color, #7c3aed);
     color: #ffffff;
     border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: var(--transition);
-    margin-top: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 5px;
 }
 
 .btn-submit:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--primary-hover, #6d28d9);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
 }
 
+/*chuyển 1 cột trên màn hình điện thoại nhỏ */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
 /* Thông báo lỗi & thành công */
 .error-msg {
     color: #ef4444;
