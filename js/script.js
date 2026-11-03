@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ==================== 1. DARK / LIGHT MODE TOGGLE (III.14, V.19) ==================== */
+    /* DARK / LIGHT MODE TOGGLE */
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn.querySelector('i');
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     });
 
-    /* ==================== 2. MOBILE HAMBURGER MENU (III.14) ==================== */
+    /*  MOBILE HAMBURGER MENU  */
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ==================== 3. LỌC DỰ ÁN / PROJECT FILTER (V.19) ==================== */
+    /*  LỌC DỰ ÁN / PROJECT FILTER */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ==================== 4. VALIDATE FORM LIÊN HỆ (III.15) ==================== */
+    /* FORM LIÊN HỆ  */
     const contactForm = document.getElementById('contact-form');
     const fullnameInput = document.getElementById('fullname');
     const emailInput = document.getElementById('email');
